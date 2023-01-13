@@ -5,8 +5,8 @@ export type CreateProjectDTO = {
 	name: string;
 	category: typeof projectCategories[number];
 	image: string;
-	startDate: Date;
-	endDate: Date;
+	startDate?: Date;
+	endDate?: Date;
 	priority: typeof priorities[number];
 	budget: number;
 	description?: string;

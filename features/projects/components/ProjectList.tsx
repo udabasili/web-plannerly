@@ -10,7 +10,16 @@ export const ProjectList = (props: ProjectListProps) => {
 	return (
 		<ProjectListContainer>
 			{arrays.map((_, index) => (
-				<ProjectItemCard key={index} />
+				<ProjectItemCard
+					key={index}
+					name={''}
+					category={'UI/UX Design'}
+					image={''}
+					priority={''}
+					budget={0}
+					id={''}
+					createdAt={''}
+				/>
 			))}
 		</ProjectListContainer>
 	);

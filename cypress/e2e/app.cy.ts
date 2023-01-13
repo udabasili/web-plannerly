@@ -10,3 +10,5 @@ describe('Navigation', () => {
 		}).should('include', 'clients');
 	});
 });
+
+export {};

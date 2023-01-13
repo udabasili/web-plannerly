@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import React from 'react';
 
-import { MainNavigation } from '../Navigation/MainNavigation';
+import { MainNavigation } from '@/components/Navigation/MainNavigation';
+import useDisclosure from '@/hooks/useDisclosure';
+
 import { SideNav } from '../Sidebar';
 
 import { Container, Main } from './index.styled';
-
-import useDisclosure from '@/hooks/useDisclosure';
 
 type MainLayoutProps = {
 	title: string;

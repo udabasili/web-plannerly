@@ -40,6 +40,13 @@ module.exports = {
 		'import/order': [
 			'error',
 			{
+				pathGroups: [
+					{
+						pattern: '@/**',
+						group: 'external',
+						position: 'after',
+					},
+				],
 				groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object'],
 				'newlines-between': 'always',
 				alphabetize: { order: 'asc', caseInsensitive: true },

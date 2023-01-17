@@ -3,12 +3,12 @@ import React, { useMemo } from 'react';
 import { AiFillDelete, AiTwotoneEdit } from 'react-icons/ai';
 import { IoIosAddCircle } from 'react-icons/io';
 
-import { teamData } from '../data';
-import { Team } from '../types';
-
 import { Table } from '@/components/Element/Table';
 import colors from '@/constant/color';
 import useDeviceDetect from '@/hooks/useDeviceDetect';
+
+import { teamData } from '../data';
+import { ITeam } from '../types';
 
 const TeamMembers = ({ members }: { members: Array<string> }) => {
 	const { isMobile } = useDeviceDetect();
@@ -44,7 +44,7 @@ const TeamMembers = ({ members }: { members: Array<string> }) => {
 export const TeamsTable = () => {
 	const teams = new Array(9).fill(teamData);
 	return (
-		<Table<Team>
+		<Table<ITeam>
 			data={teams}
 			columns={[
 				{

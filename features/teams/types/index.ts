@@ -15,8 +15,8 @@ export type ITeam = {
 } & BaseEntity;
 
 export type ITeamRequest = {
-	teamLeader: Partial<IEmployee>;
-	project: Partial<IProject>;
+	teamLeader: string;
+	project: string;
 	currentTask: typeof tasks[number];
 	projectStart: string;
 	teamMembers: Array<string>;

@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+import Project from '@/models/Project';
 import Team from '@/models/Team';
 import dbConnect from '@/utils/dbConnect';
 import errorController from '@/utils/errorController';
@@ -17,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 		case 'GET':
 			try {
 				const team = await Team.findById(id)
-					.populate('project', '_id name')
+					.populate('project', '_id name', Project)
 					.populate('teamLeader', '_id name profileUrl')
 					.populate('teamMembers', '_id name profileUrl');
 

@@ -1,5 +1,5 @@
 import { Avatar } from 'flowbite-react';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { AiFillDelete, AiTwotoneEdit } from 'react-icons/ai';
 import { IoIosAddCircle } from 'react-icons/io';
 

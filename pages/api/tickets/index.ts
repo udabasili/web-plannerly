@@ -2,6 +2,7 @@ import { Error } from 'mongoose';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nextConnect from 'next-connect';
 
+import Employees from '@/models/Employees';
 import Ticket from '@/models/Tickets';
 import dbConnect from '@/utils/dbConnect';
 import errorController from '@/utils/errorController';
@@ -28,7 +29,7 @@ apiRoute.post(async (req: NextApiRequest, res: NextApiResponse) => {
 apiRoute.get(async (req: NextApiRequest, res: NextApiResponse) => {
 	try {
 		await dbConnect();
-		const tickets = await Ticket.find({}).populate('author', '_id name profileUrl');
+		const tickets = await Ticket.find({}).populate('author', '_id name profileUrl', Employees);
 		return res.status(200).json({ success: true, message: tickets });
 	} catch (error) {
 		errorController(error, req, res);

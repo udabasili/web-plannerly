@@ -1,8 +1,7 @@
-import { AxiosError } from 'axios';
-import cloudinary from 'cloudinary';
 import mongoose from 'mongoose';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+import Employees from '@/models/Employees';
 import Ticket from '@/models/Tickets';
 import dbConnect from '@/utils/dbConnect';
 import errorController from '@/utils/errorController';
@@ -18,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 	switch (method) {
 		case 'GET':
 			try {
-				const ticket = await Ticket.findById(id);
+				const ticket = await Ticket.findById(id).populate('author', '_id name profileUrl', Employees);
 				if (!ticket) {
 					return res.status(400).json({ success: false });
 				}

@@ -45,19 +45,19 @@ export const EmployeeCard = (props: IEmployee) => {
 				<div className="employee__position">{position}</div>
 				<div className="employee__phone">
 					<BiPhone />
-					<span className="ml-2">{phoneNumber}</span>
+					<span className="ml-2 text-xs">{phoneNumber}</span>
 				</div>
 				<div className="employee__email">
 					<FiMail />
-					<span className="ml-2">{email}</span>
+					<span className="ml-2 text-xs">{email}</span>
 				</div>
 				<div className="employee__no-of-projects">
 					<AiOutlineFundProjectionScreen />
-					<span className="ml-2">No of projects</span>
+					<span className="ml-2 text-xs">No of projects</span>
 				</div>
 				<div className="employee__no-of-current-tasks">
 					<AiOutlineFundProjectionScreen />
-					<span className="ml-2">No of current tasks</span>
+					<span className="ml-2 text-xs">No of current tasks</span>
 				</div>
 			</EmployeeCardContainer>
 			<CustomModal

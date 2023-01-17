@@ -44,11 +44,11 @@ export const ClientCard = (props: IClient) => {
 				<div className="client__category">{companyName}</div>
 				<div className="client__phone">
 					<BiPhone />
-					<span className="ml-2">{phoneNumber}</span>
+					<span className="ml-2 text-xs">{phoneNumber}</span>
 				</div>
 				<div className="client__email">
 					<FiMail />
-					<span className="ml-2">{email}</span>
+					<span className="ml-2 text-xs">{email}</span>
 				</div>
 			</ClientCardContainer>
 			<CustomModal

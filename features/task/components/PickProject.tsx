@@ -1,4 +1,5 @@
 import { Label, Select } from 'flowbite-react';
+import { useRouter } from 'next/router';
 import React, { Dispatch, SetStateAction } from 'react';
 
 import Button from '@/components/Element/Button';
@@ -17,6 +18,7 @@ type PickProjectProps = {
 
 export const PickProject = ({ setProject, projectId, setRoute, setProjectName }: PickProjectProps) => {
 	const { isLoading, data: projects } = useGetProjects();
+	const router = useRouter();
 
 	if (isLoading) {
 		return <Spinner size="lg" containerClassName="self-center justify-self-center mt-10" />;
@@ -35,11 +37,11 @@ export const PickProject = ({ setProject, projectId, setRoute, setProjectName }:
 			{projects?.length === 0 ? (
 				<h2>No Project</h2>
 			) : (
-				<div className="grid grid-cols-[1fr_max-content]">
+				<div className="grid grid-cols-[1fr_max-content] tabPort:grid-cols-1">
 					<Select
 						id="countries"
 						required={true}
-						className="flex-1 mr-4 h-full"
+						className="flex-1 mr-4 h-full tabPort:mr-0"
 						value={projectId as string}
 						onChange={onChange}
 					>
@@ -50,10 +52,16 @@ export const PickProject = ({ setProject, projectId, setRoute, setProjectName }:
 							</option>
 						))}
 					</Select>
-					<Button size="lg" variant="primary" type="button">
+					<Button
+						size="lg"
+						variant="primary"
+						type="button"
+						className="tabPort:my-3 tabPort:self-center tabPort:justify-self-center"
+						onClick={() => router.push('/projects')}
+					>
 						Add Project
 					</Button>
-					<div className="flex flex-col justify-start items-center">
+					<div className="flex flex-col justify-start items-center ">
 						<Button
 							size="lg"
 							variant="primary"

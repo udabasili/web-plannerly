@@ -8,7 +8,7 @@ import { Spinner } from '@/components/Element/Spinner';
 import { useGetProject } from '@/features/projects';
 
 import { useCreateTask } from '../api/createTasks';
-import { subTasks, tasks } from '../data/tasks';
+import { tasks, subTasks } from '../data/tasks';
 
 import { TaskListContainer } from './index.types';
 
@@ -39,9 +39,13 @@ export const CreateTasks = ({ projectId, setRoute }: CreateTasksProps) => {
 		setRoute: (e: Routes) => setRoute(e),
 	});
 	const { isLoading, project } = useGetProject(projectId);
-	const [startDate, setStartDate] = useState<string>(
-		project?.startDate ? project.startDate : new Date().toDateString()
-	);
+	const [startDate, setStartDate] = useState<string>();
+
+	useEffect(() => {
+		if (project) {
+			setStartDate(project.startDate);
+		}
+	}, [isLoading, project]);
 
 	useEffect(() => {
 		if (startDate) {

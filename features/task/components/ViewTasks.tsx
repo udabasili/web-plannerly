@@ -150,7 +150,7 @@ export const ViewTasks = ({ projectId, setRoute }: ViewTasksProps) => {
 						return (
 							<Accordion.Panel key={task._id}>
 								<Accordion.Title className="flex flex-1">
-									<div className="flex flex-1 justify-between">
+									<div className="flex flex-1 justify-between tabPort:text-xs">
 										<span> {task.name}</span>
 										<span className="mr-5">
 											<span className="mr-5">
@@ -162,7 +162,7 @@ export const ViewTasks = ({ projectId, setRoute }: ViewTasksProps) => {
 									</div>
 								</Accordion.Title>
 								<Accordion.Content>
-									<ul className=" space-y-1 text-gray-500 list-inside dark:text-gray-400 flex flex-1 flex-col ">
+									<ul className=" space-y-1 text-gray-500 list-inside dark:text-gray-400 tabPort:text-xs flex flex-1 flex-col  ">
 										{task.subTasksPicked.map((subTask, index) => (
 											<li className="flex items-center justify-between" key={subTask}>
 												<div className="flex items-center mb-4">
@@ -176,7 +176,7 @@ export const ViewTasks = ({ projectId, setRoute }: ViewTasksProps) => {
 													/>
 													<label
 														htmlFor={subTask}
-														className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+														className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 tabPort:text-xs"
 													>
 														{subTask}
 													</label>

@@ -41,7 +41,7 @@ export const TicketTable = () => {
 	}
 
 	return (
-		<>
+		<div className="col-span-full overflow-x-auto mt-7">
 			<Table<ITicket>
 				data={tickets || []}
 				columns={[
@@ -132,6 +132,6 @@ export const TicketTable = () => {
 					close={() => setshowUpdateTicketForm(false)}
 				/>
 			) : null}
-		</>
+		</div>
 	);
 };

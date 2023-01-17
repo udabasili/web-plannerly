@@ -1,6 +1,8 @@
 import { Accordion } from 'flowbite-react';
 import styled from 'styled-components';
 
+import { responsive } from '@/utils/responsive';
+
 export const TasksContainer = styled.div`
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -15,6 +17,10 @@ export const TasksContainer = styled.div`
 	.progress {
 		grid-column: 1 / -1;
 		width: 100%;
+	}
+
+	${responsive.tabPort} {
+		padding: 2rem 0;
 	}
 `;
 

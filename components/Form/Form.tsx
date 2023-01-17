@@ -29,14 +29,13 @@ export const Form = <
 
 	const onSubmit = async (data: IFormValues) => {
 		await onSubmitFn(data);
-		// methods.reset();
 	};
 
 	useEffect(() => {
 		if (defaultValues && resetDefaultValues) {
 			methods.reset({ ...defaultValues });
 		}
-	}, [defaultValues, resetDefaultValues]);
+	}, [defaultValues, methods, resetDefaultValues]);
 
 	return (
 		<form className={clsx(['grid', className])} onSubmit={methods.handleSubmit(onSubmit)} id={id}>

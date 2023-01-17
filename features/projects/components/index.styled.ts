@@ -5,7 +5,7 @@ import { responsive } from '@/utils/responsive';
 export const ProjectListContainer = styled.div`
 	grid-column: 1 / -1;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 	gap: 2rem 3rem;
 	margin: 1.5rem 2rem;
 
@@ -44,8 +44,8 @@ export const ProjectItemCardContainer = styled.div`
 		&__icon {
 			position: absolute;
 			grid-row: 1 / 2;
-			height: 1.7rem;
-			width: 1.7rem;
+			height: 1.3rem;
+			width: 1.3rem;
 			z-index: 2;
 			margin: 1rem;
 			cursor: pointer;
@@ -60,6 +60,10 @@ export const ProjectItemCardContainer = styled.div`
 			&--edit {
 				grid-column: 1 / 2;
 				color: var(--secondary);
+			}
+
+			&:hover {
+				opacity: 0.4;
 			}
 
 			&:hover {
@@ -91,6 +95,7 @@ export const ProjectItemCardContainer = styled.div`
 			font-size: 0.9rem;
 			display: flex;
 			justify-content: center;
+			padding-bottom: 3rem;
 		}
 
 		&__progress {

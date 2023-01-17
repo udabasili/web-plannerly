@@ -29,7 +29,7 @@ export const NonCollapsableNavItem = ({ icon, name }: NonCollapsableNavItemProps
 					])}
 				>
 					<span className="text-sm">{icon}</span>
-					<span className="mx-2 font-extrabold capitalize text-lg">{name}</span>
+					<span className="mx-2 font-extrabold capitalize text-lg">{name ? name : 'Hame'}</span>
 				</NavLink>
 			</div>
 		</li>

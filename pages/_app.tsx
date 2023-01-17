@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../styles/icofont/icofont.min.css';
 import type { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import { ToastContainer } from 'react-toastify';

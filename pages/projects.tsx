@@ -6,10 +6,13 @@ import { GrAdd } from 'react-icons/gr';
 import Button from '@/components/Element/Button';
 import { MainLayout } from '@/components/Layout';
 import { PageHeader } from '@/components/PageHeader';
-import { ProjectList, projectStates } from '@/features/projects';
+import { CreateProject, ProjectList, projectStates } from '@/features/projects';
+import useDisclosure from '@/hooks/useDisclosure';
 
 export default function Projects() {
 	const [currentProjectState, setProjectState] = useState<typeof projectStates[number]>('all');
+	const { isOpen, open, close } = useDisclosure();
+
 	return (
 		<MainLayout title="Projects">
 			<PageHeader title="Projects">
@@ -20,10 +23,11 @@ export default function Projects() {
 						type="button"
 						className="self-center tabPort:mb-4"
 						startIcon={<GrAdd />}
+						onClick={open}
 					>
 						Create project
 					</Button>
-					<div className="flex items-center justify-center tabPort:ml-0 ml-8">
+					{/* <div className="flex items-center justify-center tabPort:ml-0 ml-8">
 						<div
 							className="grid grid-cols-4 shadow-md hover:shadow-lg focus:shadow-lg border-2 border-black mt-0 tabPort:mt-3"
 							role="toolbar"
@@ -42,11 +46,12 @@ export default function Projects() {
 								</button>
 							))}
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</PageHeader>
-			<div className="container">
+			<div className="container flex flex-col">
 				<ProjectList projectState={currentProjectState} />
+				<CreateProject isOpen={isOpen} close={close} />
 			</div>
 		</MainLayout>
 	);

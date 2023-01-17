@@ -1,9 +1,9 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { toast } from 'react-toastify';
 
-import { IEmployeeResponse } from '../types';
-
 import { apiCall } from '@/lib/axios';
+
+import { IEmployeeResponse } from '../types';
 
 const deleteEmployeeFn = async (id: string) => {
 	const response = await apiCall.delete<IEmployeeResponse>(`employees/${id}`);
@@ -20,7 +20,7 @@ export const useDeleteEmployee = (nextFn: () => void) => {
 		},
 		onError: (error: any) => {
 			nextFn();
-			toast.error(error.message);
+			toast.error(error.response?.data?.message || error.message);
 		},
 	});
 	return {

@@ -5,7 +5,7 @@ const nextConfig = {
 		styledComponents: true,
 	},
 	images: {
-		domains: ['mdbcdn.b-cdn.net', 'flowbite.com'],
+		domains: ['mdbcdn.b-cdn.net', 'flowbite.com', 'res.cloudinary.com'],
 	},
 };
 

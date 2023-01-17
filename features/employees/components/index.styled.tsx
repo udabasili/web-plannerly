@@ -77,13 +77,6 @@ export const EmployeeCardContainer = styled.div`
 			padding: 1rem;
 		}
 
-		&__team-members {
-			grid-column: 1 / -1;
-			padding-top: 2rem;
-			text-align: center;
-			justify-self: center;
-		}
-
 		&__phone,
 		&__email,
 		&__no-of-projects,

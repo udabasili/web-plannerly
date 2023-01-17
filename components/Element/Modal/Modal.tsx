@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { Modal } from 'flowbite-react';
 import React from 'react';
 
@@ -18,7 +19,7 @@ export const CustomModal = (props: CustomModalProps) => {
 	return (
 		<Modal show={isOpen} onClose={onClose}>
 			{title ? <Modal.Header>{title}</Modal.Header> : <Modal.Header />}
-			<Modal.Body className={bodyClassName}>{children}</Modal.Body>
+			<Modal.Body className={clsx([bodyClassName, 'overflow-y-auto max-h-[80vh]'])}>{children}</Modal.Body>
 			{onSuccessFn ? (
 				<Modal.Footer className="justify-end">
 					<Button
@@ -27,7 +28,6 @@ export const CustomModal = (props: CustomModalProps) => {
 						type="button"
 						onClick={() => {
 							onSuccessFn();
-							onClose();
 						}}
 					>
 						Submit

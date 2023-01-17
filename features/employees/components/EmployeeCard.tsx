@@ -7,14 +7,14 @@ import { FiMail } from 'react-icons/fi';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import { ImBin } from 'react-icons/im';
 
+import Button from '@/components/Element/Button';
+import { CustomModal } from '@/components/Element/Modal';
+
 import { useDeleteEmployee } from '../api/deleteEmployee';
 import { IEmployee } from '../types';
 
 import { EmployeeCardContainer } from './index.styled';
 import { UpdateEmployee } from './UpdateEmployee';
-
-import Button from '@/components/Element/Button';
-import { CustomModal } from '@/components/Element/Modal';
 
 export const EmployeeCard = (props: IEmployee) => {
 	const { _id = '', profileUrl, position, email, phoneNumber, name } = props;

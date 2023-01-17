@@ -1,9 +1,9 @@
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 
-import { IEmployeesResponse } from '../types';
-
 import { apiCall } from '@/lib/axios';
+
+import { IEmployeesResponse } from '../types';
 
 const getAllEmployeesFn = async () => {
 	const response = await apiCall.get<IEmployeesResponse>(`employees`);
@@ -16,7 +16,7 @@ export const useGetEmployees = () => {
 			return data.message;
 		},
 		onError: (error: any) => {
-			toast.error(error.message);
+			toast.error(error.response?.data?.message || error.message);
 		},
 	});
 	return {

@@ -1,16 +1,16 @@
 import _ from 'lodash';
 import { z } from 'zod';
 
+import Button from '@/components/Element/Button';
+import { CustomModal } from '@/components/Element/Modal';
+import { CustomSelectInput, Form, Input, InputImage } from '@/components/Form';
+
 import { useCreateEmployee } from '../api/createEmployee';
 import { departments } from '../data/department';
 import { roles } from '../data/roles';
 import { IEmployeeRequest } from '../types';
 
-import Button from '@/components/Element/Button';
-import { CustomModal } from '@/components/Element/Modal';
-import { CustomSelectInput, Form, Input, InputImage } from '@/components/Form';
-
-const MAX_FILE_SIZE = 500000;
+const MAX_FILE_SIZE = 200000;
 const ACCEPTED_IMAGE_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
 
 type CreateEmployeeProps = {
@@ -27,10 +27,11 @@ const schema = z.object({
 	phoneNumber: z.string().regex(/\d{3}-\d{3}-\d{4}/),
 	profileUrl: z
 		.any()
-		// .refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, `Max image size is 5MB.`)
+		.refine((files) => files?.length == 1, 'Image is required.')
+		.refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, `Max file size is 2MB.`)
 		.refine(
 			(files) => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type),
-			'Only .jpg, .jpeg, .png and .webp formats are supported.'
+			'.jpg, .jpeg, .png and .webp files are accepted.'
 		),
 });
 

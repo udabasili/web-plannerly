@@ -1,9 +1,9 @@
 import { useQueryClient, useMutation } from 'react-query';
 import { toast } from 'react-toastify';
 
-import { IEmployeeRequest, IEmployeeResponse } from '../types';
-
 import { apiCall } from '@/lib/axios';
+
+import { IEmployeeRequest, IEmployeeResponse } from '../types';
 
 export type UpdateEmployeeDTO = Omit<IEmployeeRequest, 'profileUrl'>;
 
@@ -24,7 +24,7 @@ export const useUpdateEmployee = ({ nextFn }: { nextFn: () => void }) => {
 			},
 			onError: (error: any) => {
 				nextFn();
-				toast.error(error.message);
+				toast.error(error.response?.data?.message || error.message);
 			},
 		}
 	);

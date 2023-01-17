@@ -14,9 +14,9 @@ type CustomSelectInputProps = FormControlWithoutChildren & {
 	selectionOptions: SelectOption[];
 	registration: Partial<UseFormRegisterReturn>;
 	placeholder?: string;
-	defaultValue: string;
 	required?: boolean;
 	className?: string;
+	defaultValue?: string;
 } & React.SelectHTMLAttributes<HTMLSelectElement>;
 
 export const CustomSelectInput = (props: CustomSelectInputProps) => {
@@ -26,25 +26,29 @@ export const CustomSelectInput = (props: CustomSelectInputProps) => {
 		selectionOptions,
 		error,
 		className,
-		defaultValue,
 		registration,
 		placeholder,
+		defaultValue,
 		containerClass,
 		required,
 		...otherProps
 	} = props;
 
 	return (
-		<FormControl label={label} containerClass={containerClass} name={name} error={error}>
+		<FormControl label={label} containerClass={containerClass} name={name} error={error} {...otherProps}>
 			<div id="select">
 				<Select
 					id={name}
 					className={className}
 					required={required}
 					name={name}
+					placeholder={placeholder}
 					defaultValue={defaultValue}
 					{...registration}
 				>
+					<option selected disabled>
+						{placeholder}
+					</option>
 					{selectionOptions.map((selectionOption) => (
 						<option value={selectionOption.value} key={selectionOption.label?.toString()}>
 							{selectionOption.label}

@@ -3,16 +3,21 @@ import { FiUsers } from 'react-icons/fi';
 import { HiTicket, HiUsers } from 'react-icons/hi';
 
 export const navData = [
+	// {
+	// 	name: 'dashboard',
+	// 	icon: AiFillHome,
+	// 	children: ['Hr Dashboard', 'Project Dashboard'],
+	// 	collapsible: true,
+	// },
 	{
-		name: 'dashboard',
+		name: '',
 		icon: AiFillHome,
-		children: ['Hr Dashboard', 'Project Dashboard'],
-		collapsible: true,
+		collapsible: false,
 	},
 	{
 		name: 'projects',
 		icon: AiFillProject,
-		children: ['Projects', 'Tasks', 'Teams'],
+		children: ['Projects', 'Tasks'],
 		collapsible: true,
 	},
 	{

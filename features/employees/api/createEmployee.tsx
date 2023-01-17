@@ -1,9 +1,9 @@
 import { useQueryClient, useMutation } from 'react-query';
 import { toast } from 'react-toastify';
 
-import { IEmployeeResponse } from '../types';
-
 import { apiCall } from '@/lib/axios';
+
+import { IEmployeeResponse } from '../types';
 
 const createEmployeeFn = async (data: FormData) => {
 	const response = await apiCall<IEmployeeResponse>({

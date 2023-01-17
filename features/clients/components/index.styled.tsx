@@ -5,7 +5,7 @@ import { responsive } from '@/utils/responsive';
 export const ClientsContainer = styled.div`
 	grid-column: 1 / -1;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 	gap: 2rem 3rem;
 	margin: 1.5rem 2rem;
 
@@ -44,8 +44,8 @@ export const ClientCardContainer = styled.div`
 		&__icon {
 			position: absolute;
 			grid-row: 1 / 2;
-			height: 1.7rem;
-			width: 1.7rem;
+			height: 1.3rem;
+			width: 1.3rem;
 			z-index: 2;
 			margin: 1rem;
 			cursor: pointer;
@@ -76,44 +76,12 @@ export const ClientCardContainer = styled.div`
 			font-size: 0.9rem;
 		}
 
-		&__team-members {
-			grid-column: 1 / -1;
-			padding-top: 2rem;
-			text-align: center;
-			justify-self: center;
-		}
-
-		&__add-team {
-		}
-
-		&__team-no,
-		&__duration {
+		&__phone,
+		&__email {
 			font-size: 0.9rem;
+			padding: 1.5rem;
 			display: flex;
 			justify-content: center;
-		}
-
-		&__progress {
-			grid-column: 1 / -1;
-			display: grid;
-			padding: 1rem 1.5rem;
-			grid-template-columns: repeat(2, 1fr);
-
-			.value {
-				grid-column: 1 / -1;
-				padding: 1rem 0;
-			}
-
-			.label {
-				text-align: left;
-				text-transform: capitalize;
-			}
-
-			.days {
-				text-align: right;
-				justify-self: flex-end;
-				align-self: center;
-			}
 		}
 	}
 `;

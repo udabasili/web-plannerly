@@ -12,17 +12,17 @@ export type TableProps<Entry> = {
 	columns: TableColumn<Entry>[];
 };
 
-export const Table = <Entry extends { id: string; buttons?: any }>({ data, columns }: TableProps<Entry>) => {
+export const Table = <Entry extends { _id: string; buttons?: any }>({ data, columns }: TableProps<Entry>) => {
 	if (!data?.length) {
 		return (
 			<div className="flex flex-col items-center justify-center text-gray-500 bg-white h-80">
 				<HiArchive className="w-16 h-16" />
-				<h4>No Entries Found</h4>
+				<h4>No Data Found</h4>
 			</div>
 		);
 	}
 	return (
-		<div className="flex flex-col overflow-x-auto">
+		<div className="flex flex-col ">
 			<div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
 				<div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
 					<div className="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
@@ -42,7 +42,7 @@ export const Table = <Entry extends { id: string; buttons?: any }>({ data, colum
 							</thead>
 							<tbody>
 								{data.map((entry, entryIndex) => (
-									<tr key={entry?.id || entryIndex} className="odd:bg-white even:bg-gray-100">
+									<tr key={entry?._id || entryIndex} className="odd:bg-white even:bg-gray-100">
 										{columns.map(({ Cell, field, title }, columnIndex) => (
 											<td
 												key={title + columnIndex}

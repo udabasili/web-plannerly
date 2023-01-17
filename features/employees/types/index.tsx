@@ -1,8 +1,6 @@
 import { departments } from '../data/department';
 import { roles } from '../data/roles';
 
-import { BaseEntity } from '@/types/index';
-
 export interface IEmployee {
 	_id?: string;
 	name: string;

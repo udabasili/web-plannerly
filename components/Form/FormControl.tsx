@@ -23,7 +23,7 @@ export const FormControl = (props: FormControlProps) => {
 			</div>
 			{children}
 			{error?.message ? (
-				<div role="alert" aria-label={error.message} className="text-sm font-semibold text-red-500">
+				<div role="alert" aria-label={error.message} className="text-xs font-semibold text-red-500">
 					{error.message}
 				</div>
 			) : null}

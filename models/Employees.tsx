@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 
 import { departments, IEmployee, roles } from '@/features/employees';
 
+import Tickets from './Tickets';
+
 function validateEmail(email: string) {
 	const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 	return re.test(email);
@@ -62,5 +64,19 @@ const employeeSchema = new mongoose.Schema<EmployeeSchema>(
 		timestamps: true,
 	}
 );
+
+employeeSchema.pre('remove', { document: true, query: false }, function (next) {
+	Tickets.deleteMany({
+		author: this._id,
+	}).exec();
+	next();
+});
+
+employeeSchema.pre('deleteOne', { document: true, query: false }, function (next) {
+	Tickets.deleteMany({
+		author: this._id,
+	}).exec();
+	next();
+});
 
 export default mongoose.models.Employee || mongoose.model('Employee', employeeSchema);

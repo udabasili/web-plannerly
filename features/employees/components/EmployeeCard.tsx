@@ -30,7 +30,15 @@ export const EmployeeCard = (props: IEmployee) => {
 	return (
 		<>
 			<EmployeeCardContainer>
-				<Avatar className="employee__avatar" img={profileUrl} rounded={true} size="lg"></Avatar>
+				<Avatar
+					className="employee__avatar"
+					img={profileUrl}
+					rounded={true}
+					size="lg"
+					css={{
+						objectFit: 'cover',
+					}}
+				></Avatar>
 				<ImBin
 					className={clsx(['employee__icon', 'employee__icon--delete'])}
 					role="button"

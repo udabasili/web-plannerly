@@ -19,9 +19,9 @@ const SideNavLogo = () => {
 				<div className="flex items-center">
 					<div className="shrink-0">
 						<Image
-							src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp"
+							src="/icons8-schedule-cloud-96.png"
 							className="rounded-full w-10"
-							alt="Avatar"
+							alt="Web plannerly"
 							width={20}
 							height={20}
 						/>

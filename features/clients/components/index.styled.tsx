@@ -33,6 +33,10 @@ export const ClientCardContainer = styled.div`
 			justify-self: center;
 			position: absolute;
 			transform: translateY(-50%);
+
+			img {
+				object-fit: cover;
+			}
 		}
 		&__name {
 			grid-column: 1 / -1;

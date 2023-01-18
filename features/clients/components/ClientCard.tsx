@@ -29,7 +29,7 @@ export const ClientCard = (props: IClient) => {
 	return (
 		<>
 			<ClientCardContainer>
-				<Avatar className="client__avatar" img={profileUrl} rounded={true} size="lg"></Avatar>
+				<Avatar className="client__avatar object-cover" img={profileUrl} rounded={true} size="lg"></Avatar>
 				<ImBin
 					className={clsx(['client__icon', 'client__icon--delete'])}
 					role="button"

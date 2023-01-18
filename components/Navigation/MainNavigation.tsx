@@ -1,8 +1,7 @@
-import { Avatar, Button, Dropdown, Navbar } from 'flowbite-react';
+import { Avatar, Dropdown } from 'flowbite-react';
 import React from 'react';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { HiOutlineArrowRight, HiLockClosed } from 'react-icons/hi';
 
 import { SearchBox } from '../Element/SearchBox';
 
@@ -32,8 +31,8 @@ export const MainNavigation = ({ open, isOpen, close }: MainNavigationProps) => 
 				/>
 			)}
 			<div className="flex flex-1  justify-between bottom-row">
-				<SearchBox className="search" />
-				<Dropdown
+				{/* <SearchBox className="search" /> */}
+				{/* <Dropdown
 					label={
 						<Avatar
 							alt="User settings"
@@ -46,14 +45,9 @@ export const MainNavigation = ({ open, isOpen, close }: MainNavigationProps) => 
 				>
 					<Dropdown.Header>
 						<span className="block text-sm">Bonnie Green</span>
-						<span className="block truncate text-sm font-medium">name@flowbite.com</span>
+						<span className="block truncate text-sm font-medium">admin@webplannerly.com</span>
 					</Dropdown.Header>
-					<Dropdown.Item>Dashboard</Dropdown.Item>
-					<Dropdown.Item>Settings</Dropdown.Item>
-					<Dropdown.Item>Earnings</Dropdown.Item>
-					<Dropdown.Divider />
-					<Dropdown.Item>Sign out</Dropdown.Item>
-				</Dropdown>
+				</Dropdown> */}
 			</div>
 		</MainNavigationContainer>
 	);

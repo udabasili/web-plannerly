@@ -21,25 +21,18 @@ export const MainLayout = (props: MainLayoutProps) => {
 	return (
 		<Container>
 			<Head>
-				<title>{`Udendu Portfolio  | ${title} | Best Developer Portfolio`}</title>
-				<link rel="icon" href="/favicon.ico" />
+				<title>{`Web Plannerly  | ${title} | Best Project Management`}</title>
+				<link rel="icon" href="/fav.ico" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-				<meta
-					name="description"
-					content="The number one Best Developer Portfolio store in Nigeria. Get your quality kitchen here"
-				/>
-				<meta property="og:URL" content="www.udabasili.live" />
-				<meta property="og:title" content={`Udendu Portfolio  | ${title} | Best Developer Portfolio Nigeria`} />
+				<meta name="description" content="The number one  Best Project Management" />
+				<meta property="og:URL" content="https://web-plannerly.vercel.app/" />
+				<meta property="og:title" content={`Web Plannerly   | ${title} |  Best Project Management`} />
 				<meta property="og:type" content="website" />
-				<meta
-					property="og:description"
-					content="The number one Best Developer Portfolio store in Nigeria. Get your quality websites built here. See Best Developer Portfolio."
-				/>
+				<meta property="og:description" content="The number one  Best Project Management." />
 			</Head>
 			<SideNav isOpen={isOpen} />
 			<MainNavigation open={open} isOpen={isOpen} close={close} />
 			<Main>{children}</Main>
-			{/* <Footer /> */}
 		</Container>
 	);
 };

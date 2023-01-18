@@ -33,7 +33,7 @@
 <h3 align="center">Web plannerly</h3>
 
   <p align="center">
-    Web plannerly is a sample project and employee management. It can be used to handle invoices, and project management amongst other things
+    Web plannerly is a sample project and employee management. It can be used to handle projects, handle employee details, distribute employee tasks in addition to generating Gantt Chart
     <br />
     <a href="https://github.com/udabasili/web-plannerly"><strong>Explore the docs »</strong></a>
     <br />
